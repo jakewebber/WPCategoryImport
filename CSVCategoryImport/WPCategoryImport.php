@@ -1,15 +1,15 @@
 <?php
 /**
- * @package ImportCategories
+ * @package CSVCategoryImport
  * @version 1.0
  * @author Jacob Webber
  */
 /*
+
 /*
 Plugin Name: CSVCategoryImport
 Description: Import categories from CSV. Use FTP to put CSV File in ABSPATH directory. Parent categories must be at top of file. No spaces between commas. Deactivate->Activate this plugin to apply.
 Parent categories must be in file before child categories
-
 */
 
 /* EXAMPLE: category,category parent,slug,description
@@ -23,7 +23,7 @@ Parent categories must be in file before child categories
 ini_set("auto_detect_line_endings", true); 
 
 require_once(ABSPATH . "wp-admin/includes/admin.php");
-$import_file = ABSPATH . 'wp-content/plugins/importCategories/fountainreportdates.csv'; //Change to your CSV location
+$import_file = ABSPATH . 'wp-content/plugins/CSVCategoryImport/yourFile.csv'; //Change to your CSV location
 $import = array();
 $fh = fopen($import_file,'r');
 while($data = fgetcsv($fh, 1000, ',')) {
